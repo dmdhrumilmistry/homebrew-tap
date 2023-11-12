@@ -1,4 +1,4 @@
-class OFFAT < Formula
+class Offat < Formula
     desc "OWASP OFFAT (OFFensive Api Tester) is created to automatically test API for common vulnerabilities after generating tests from openapi specification file. It provides feature to automatically fuzz inputs and use user provided inputs during tests specified via YAML config file."
     homepage "https://owasp.org/OFFAT"
     url "https://github.com/OWASP/OFFAT/archive/v0.11.0.tar.gz"
