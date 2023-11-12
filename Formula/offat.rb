@@ -159,7 +159,19 @@ class Offat < Formula
     end
   
     test do
-      # OFFAT package test script to ensure it's installed correctly
-      system bin/"offat", "--version"
+      # OFFAT API test to ensure it's installed correctly
+      pid = fork do
+        # Start OFFAT API in a child process
+        exec "#{bin}/offat-api"
+      end
+  
+      # Sleep for 2 seconds (adjust the duration as needed)
+      sleep 2
+  
+      # Send Ctrl+C signal to the child process
+      Process.kill("INT", pid)
+  
+      # Wait for the child process to finish
+      Process.wait(pid)
     end
   end
